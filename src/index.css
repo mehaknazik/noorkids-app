@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-kids: 'Fredoka', 'Quicksand', sans-serif;
+    --font-urdu: 'Noto Nastaliq Urdu', 'Amiri', serif;
+  }
+  
+  body {
+    font-family: var(--font-kids);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #fefce8;
+  }
+}
+
+.font-urdu {
+  font-family: var(--font-urdu), 'Jameel Noori Nastaleeq', serif;
+  line-height: 2.2;
+  direction: rtl;
+}
+
+.font-kids {
+  font-family: var(--font-kids);
+}
+
+/* Fun bubbly animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); }
+  50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.8); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.animate-pop {
+  animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+/* Custom friendly scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #fcd34d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Button active bounce */
+.btn-bounce {
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+.btn-bounce:active {
+  transform: scale(0.93) translateY(2px);
+}
